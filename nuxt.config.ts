@@ -1,9 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
-const _port  = Number(process.env.PORT) || 3000;
+const _port  = Number(process.env.PORT) || 3001;
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  runtimeConfig: {
+    port: _port,
+  },
   devServer: {
     port:  _port,
   },
