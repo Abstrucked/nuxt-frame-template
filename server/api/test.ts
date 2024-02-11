@@ -32,7 +32,7 @@ const _html: string = `
         <!------------------ CUSTOM META TAGS --------------------------------->
         <meta property="fc:frame" content="${farcasterMeta.frame}">
         <meta property="fc:frame:image" content=${defaultMeta.imgURL}>
-        ${"buttons"}
+        ${farcasterMeta.buttons.map((button) => button.html).join("\n")}
      </head>
      <body>
         <h1>${defaultMeta.title}</h1>
@@ -45,7 +45,6 @@ export default defineEventHandler(async (event) => {
   console.log("event", event)
   console.log(_html)
   return {
-    statusCode: 200,
     body: _html
   }
 })
