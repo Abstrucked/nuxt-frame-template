@@ -19,8 +19,14 @@ useHead({
   },
   script: [ { innerHTML: 'console.log(\'Hello world\')' } ]
 })
+
+const {
+  data
+} = useFetch("/api/test")
+
 </script>
 <template>
   <div>
+    {{ data.body }}
   </div>
 </template>
